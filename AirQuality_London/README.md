@@ -1,4 +1,4 @@
-<b>Goal</b>: We're dealing with a time-series dataset requiring multiple time series features prediction for each time unit. The goal is to find out the next 30 mins of air quality metrics which includes: CO, NO, PM10, PM 2.5. <br>
+<b>Goal</b>: To predict the next 30 mins(in our case hours) of air quality metrics which includes: CO, NO, PM10, PM 2.5. <br>
 The approach I've followed is as follows:<br>
 <b>a. Data Collection</b>: Collected the hourly data for London. Since the data is available for specific sub-regions in London, I have trim down the requirement for one such sub-region : London N. Kensington. Similar approach can be applied for all required sub-regions of Central London and the mean all regions could be used for the final prediction. The data is available at hourly level and hence prediction cannot be done for minutes, I'm predicting next 30 hours in the notebook. The API used for the data collection is : https://uk-air.defra.gov.uk/. The data has been collected from July 1,2015 till June 30, 2020.<br>
 <b>b. Data Cleaning</b>:  Some cleaning steps include:<br>
