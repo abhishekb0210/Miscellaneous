@@ -6,8 +6,8 @@ The approach I've followed is as follows:<br>
 <li>Imputing NaNs or "No data" values using linear interpolation</li>
 <li> Handling outliers using standard deviation. Replacing values greater that max allowed standard deviation with max standard deviation value and similarly replacing values smaller than the minimum standard deviation value with minimum standard deviation value.</li></ul>
 **c. Exploratory Data Analysis**: Used auto-correlation plots to understand the data better and then subsequently applied data differences to generate stationary data and remove trends.<br>
-**d. Feature Engineering**: Created custom features for month, day of the week and hour. Generated the sine and cosine variations of the above. 
-**e. Model Training**: Some of the models tried are as follows:<br>
+<b>d. Feature Engineering</b>: Created custom features for month, day of the week and hour. Generated the sine and cosine variations of the above.<br>
+<b>e. Model Training</b>: Some of the models tried are as follows:<br>
 <ul><li> VAR: Vector Autoregression Model - Complete statistical approach which learns from past data</li>
 <li> LSTM : based on neural networks and can learn from the past data</li>
 <li> LSTM with VAR: First trained on VAR and then used</li>
