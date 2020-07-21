@@ -1,11 +1,11 @@
-**Goal**: We're dealing with a time-series dataset requiring multiple time series features prediction for each time unit. The goal is to find out the next 30 mins of air quality metrics which includes: CO, NO, PM10, PM 2.5. <br>
+<b>Goal</b>: We're dealing with a time-series dataset requiring multiple time series features prediction for each time unit. The goal is to find out the next 30 mins of air quality metrics which includes: CO, NO, PM10, PM 2.5. <br>
 The approach I've followed is as follows:<br>
-**a. Data Collection**: Collected the hourly data for London. Since the data is available for specific sub-regions in London, I have trim down the requirement for one such sub-region : London N. Kensington. Similar approach can be applied for all required sub-regions of Central London and the mean all regions could be used for the final prediction. The data is available at hourly level and hence prediction cannot be done for minutes, I'm predicting next 30 hours in the notebook. The API used for the data collection is : https://uk-air.defra.gov.uk/. The data has been collected from July 1,2015 till June 30, 2020.<br>
-**b. Data Cleaning**:  Some cleaning steps include:<br>
+<b>a. Data Collection</b>: Collected the hourly data for London. Since the data is available for specific sub-regions in London, I have trim down the requirement for one such sub-region : London N. Kensington. Similar approach can be applied for all required sub-regions of Central London and the mean all regions could be used for the final prediction. The data is available at hourly level and hence prediction cannot be done for minutes, I'm predicting next 30 hours in the notebook. The API used for the data collection is : https://uk-air.defra.gov.uk/. The data has been collected from July 1,2015 till June 30, 2020.<br>
+<b>b. Data Cleaning</b>:  Some cleaning steps include:<br>
 <ul><li> Removing unwanted columns</li>
 <li>Imputing NaNs or "No data" values using linear interpolation</li>
 <li> Handling outliers using standard deviation. Replacing values greater that max allowed standard deviation with max standard deviation value and similarly replacing values smaller than the minimum standard deviation value with minimum standard deviation value.</li></ul>
-**c. Exploratory Data Analysis**: Used auto-correlation plots to understand the data better and then subsequently applied data differences to generate stationary data and remove trends.<br>
+<b>c. Exploratory Data Analysis</b>: Used auto-correlation plots to understand the data better and then subsequently applied data differences to generate stationary data and remove trends.<br>
 <b>d. Feature Engineering</b>: Created custom features for month, day of the week and hour. Generated the sine and cosine variations of the above.<br>
 <b>e. Model Training</b>: Some of the models tried are as follows:<br>
 <ul><li> VAR: Vector Autoregression Model - Complete statistical approach which learns from past data</li>
